@@ -53,3 +53,6 @@ alias cath='highlight -s kellys -O truecolor --force'
 
 # show aliases with highlighting
 alias aliases='alias -p | cath -S bash'
+
+# download from github
+alias gitdl='curl -LJO'
