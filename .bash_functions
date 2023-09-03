@@ -144,3 +144,8 @@ alias bathelp='bat --plain --language=help'
 help() {
 	"$@" --help 2>&1 | bathelp
 }
+
+# view status of system services
+services() {
+	systemctl --type=service --state=active -q | awk '{print $1}' | fzf --height 100% --preview 'systemctl status {}' --preview-window 'right:70%,wrap'
+}
