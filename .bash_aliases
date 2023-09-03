@@ -56,3 +56,6 @@ alias aliases='alias -p | cath -S bash'
 
 # download from github
 alias gitdl='curl -LJO'
+
+# download audio
+alias getsong='yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 --embed-thumbnail -P temp:/tmp'
