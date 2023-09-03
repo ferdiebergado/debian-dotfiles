@@ -51,13 +51,13 @@ if ! shopt -oq posix; then
 	fi
 fi
 
-# enable bash completion for dotgit
-. /usr/share/bash-completion/completions/git
-__git_complete dotgit __git_main
-
 # fzf tab completion
 source "$HOME/Scripts/fzf-tab-completion/bash/fzf-bash-completion.sh"
 bind -x '"\t": fzf_bash_completion'
+
+# enable bash completion for dotgit
+# . /usr/share/bash-completion/completions/git
+# __git_complete dotgit __git_main
 
 # history completion
 bind '"\e[A": history-substring-search-backward'
@@ -68,11 +68,11 @@ normal=$'\033[0m'
 yellow=$'\033[33m'
 cyan=$'\033[36m'
 
-# set the current command as the window title
-trap 'echo -ne "\033]0;${BASH_COMMAND%% *}\007"' DEBUG
-
 # If we're disconnected, capture whatever is in history
 trap 'history -a' SIGHUP
+
+# set the current command as the window title
+trap 'echo -ne "\033]0;${BASH_COMMAND%% *}\007"' DEBUG
 
 update_title() {
 	if [[ -n "$BASH_COMMAND" ]]; then
