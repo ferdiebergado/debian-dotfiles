@@ -62,6 +62,7 @@ bind -x '"\t": fzf_bash_completion'
 # history completion
 bind '"\e[A": history-substring-search-backward'
 bind '"\e[B": history-substring-search-forward'
+bind -x '"\C-r": fzf-history-search'
 
 # terminal colors
 normal=$'\033[0m'
