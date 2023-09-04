@@ -149,3 +149,8 @@ help() {
 services() {
 	systemctl --type=service --state=active -q | awk '{print $1}' | fzf --height 100% --preview 'systemctl status {}' --preview-window 'right:70%,wrap'
 }
+
+# search and run a command from history
+fzf-history-search() {
+	history | fzf | awk '{first = $1; $1=""; print $0}' | sh
+}
