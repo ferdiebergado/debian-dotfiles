@@ -19,7 +19,6 @@ alias e=nvim
 alias se=sudoedit
 alias mkdir='mkdir -pv'
 alias md=mkdir
-alias h=helix
 alias mount='mount |column -t'
 alias wget='wget -c'
 alias df='df -H'
@@ -39,7 +38,7 @@ alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # list all date string format
 alias dateh='date --help|sed -n "/^ *%%/,/^ *%Z/p"|while read l;do F=${l/% */}; date +%$F:"|'"'"'${F//%n/ }'"'"'|${l#* }";done|sed "s/\ *|\ */|/g" |column -s "|" -t'
 
-alias l='lsd'
+alias l='lsd --group-directories-first'
 
 # retrieve Windows product key
 alias winpk='sudo strings /sys/firmware/acpi/tables/MSDM | tail -n 1'
